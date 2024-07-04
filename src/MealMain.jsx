@@ -6,18 +6,32 @@ function MealMain() {
 
   useEffect(() => {
     axios
-      .get("https://www.themealbd.com/api/json/v1/1/filter.php?c=Seafood")
+      .get("https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood")
       .then((res) => {
         setItems(res.data.meal);
       })
       .catch((err) => {
-        console.log(error);
+        console.log(err);
       });
   }, []);
 
+  const itemsList = items.map(({ strMeal, strMealThumb, idMeal }) => {
+    return (
+      <>
+        <section className="card">
+          <img src={strMealThumb} />
+          <section className="content">
+            <p>{strMeal}</p>
+            <p>#{idMeal}</p>
+          </section>
+        </section>
+      </>
+    );
+  });
+
   return (
     <>
-      <section className="card"></section>
+      <div className="items-container">{itemsList}</div>
     </>
   );
 }
