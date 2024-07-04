@@ -8,7 +8,7 @@ function MealMain() {
     axios
       .get("https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood")
       .then((res) => {
-        setItems(res.data.meal);
+        setItems(res.data.meals);
       })
       .catch((err) => {
         console.log(err);
@@ -18,7 +18,7 @@ function MealMain() {
   const itemsList = items.map(({ strMeal, strMealThumb, idMeal }) => {
     return (
       <>
-        <section className="card">
+        <section key={idMeal} className="card">
           <img src={strMealThumb} />
           <section className="content">
             <p>{strMeal}</p>
