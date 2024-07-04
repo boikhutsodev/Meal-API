@@ -1,16 +1,20 @@
-:root {
+* {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
 }
 
 nav {
+  position: fixed;
+  margin-top: -1rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding-top: 15px;
   background-color: #d3be88;
   font-family: sans-serif;
+  height: 12vh;
+  width: 100%;
+  z-index: 1;
 }
 
 li {
@@ -25,7 +29,7 @@ li a {
 }
 
 li a:hover {
-  border: 2px solid #deab5f;
+  border: none;
   border-radius: 5px;
   padding: 5px 20px;
   background: rgb(76, 75, 73);
@@ -37,15 +41,15 @@ li a:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 10px;
+
+  gap: 1px;
 }
 
 .card {
   background: rgb(255, 249, 249);
   font-size: 12px;
   color: rgb(68, 68, 68);
-  margin: 10px;
-  padding: 30px;
+  margin-top: 5rem;
   transition: 1s ease;
   cursor: pointer;
 }
