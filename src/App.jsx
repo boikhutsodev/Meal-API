@@ -1,5 +1,11 @@
+import MealMain from "./MealMain";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <MealMain />
+    </>
+  );
 }
 
 export default App;
